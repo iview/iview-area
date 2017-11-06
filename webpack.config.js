@@ -2,11 +2,22 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/lib/index.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'ivu-area-linkage.js'
+    filename: 'ivu-area-linkage.js',
+    library: 'IvuAreaLinkage',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+  },
+  externals: {
+    vue: {
+     root: 'Vue',
+     commonjs: 'vue',
+     commonjs2: 'vue',
+     amd: 'vue'
+    }
   },
   module: {
     rules: [
