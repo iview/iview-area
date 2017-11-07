@@ -1,5 +1,6 @@
 {
-    "presets": ["env", "stage-3"],
-    "plugins": ["transform-runtime"],
-    "comments": false
+  "presets": [
+    ["env", { "modules": false }],
+    "stage-3"
+  ]
 }
