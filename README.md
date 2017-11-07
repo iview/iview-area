@@ -54,5 +54,13 @@ gutter|设置各级别选择器之间的距离，单位px|String &#124; Number|1
 level|要显示的级别，如设为2则显示省、市和县，即3级，级别可设为0、1、2、3四级|String &#124; Number|3
 data-type|返回数据的类型，'all':城市编码和名称，'code':只返回编码，'name':只返回名称，数据格式请看表格下面的补充说明|String|all
 searchable|是否可搜索，添加该属性则点击选择器后可输入名称搜索|Boolean|false
+size|选择器尺寸，该属性同iview组件select的size属性，可选值为small，large，default|String|default
 default|默认显示的数据，情况比较多，请看表格下面的补充详解。|Array &#124; null &#124; undefined|无
-placeholder|选择器未选择时显示的占位字符|Array &#124; String|['请选择省', '请选择市', '请选择县区', '请选择街道']
+placeholder|选择器未选择时显示的占位字符,若为字符串，则各级别选择器均使用该作为占位字符，若为数组，根据数组对应位置的字符串设置选择器占位字符，若数组元素少于级别数，缺省的则设为默认数组中对应的占位字符|Array &#124; String|['请选择省', '请选择市', '请选择县区', '请选择街道']
+not-found-text|无数据时显示的文字提示，规则同placeholder属性|Array &#124; String|['无匹配市', '无匹配县区', '无匹配街道']
+disabled|设置禁用整个级联选择器或某个级别的选择器，可只写``disabled``，也可写``:disabled="true"``或``"false"``，或传入一个数组，如禁用二级和四级选择器则为``[1, 3]``，也可传入数组指定要禁用的级别|Boolean &#124; Array &#124; Number|false
+
+##### 补充说明：
+
+
+
