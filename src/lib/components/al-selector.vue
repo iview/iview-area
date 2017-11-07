@@ -112,7 +112,7 @@ export default {
         },
         dataType: {
             type: String,
-            default: 'label',
+            default: 'all',
             validator: (val) => {
                 return util.oneOf(val, dataTypeArr);
             }
