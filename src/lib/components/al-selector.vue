@@ -118,7 +118,7 @@ export default {
             }
         },
         default: {
-            type: Array,
+            type: [Array, Boolean],
             default () {
                 return [];
             }
@@ -228,8 +228,10 @@ export default {
                     }
                 }
             }
-            if (this.default ? (this.default.length !== 0) : false) {
+            if ((this.default && typeof this.default !== 'boolean') ? (this.default.length !== 0) : false) {
                 this[nextName] = nextSelected || this.setNextSelect(index);
+            } else if (this.default && typeof this.default === 'boolean') {
+                this[nextName] = this.setNextSelect(index);
             }
         },
         returnRes (level) {
