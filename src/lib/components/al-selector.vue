@@ -279,7 +279,7 @@ export default {
             if (typeof this.placeholder === 'string' && this.placeholder !== '') {
                 return this.placeholder;
             } else {
-                if (this.placeholder[level]) {
+                if (this.placeholder && this.placeholder[level]) {
                     return this.placeholder[level];
                 } else {
                     return this.defaultPlaceholder[level];
