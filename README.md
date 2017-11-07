@@ -1,16 +1,10 @@
 # iview-area
 
 > 一款基于Vue框架和iView-UI组件库开发的城市级联组件，数据包含中国的省(直辖市)、市、县区和街道，数据来源[area-data](https://github.com/dwqs/area-data)
->
-> An area-linkage-component bases on Vue and iView-UI components, data include China's provinces (municipalities), cities, counties and streets. Data sources: [area-data](https://github.com/dwqs/area-data)
 
 iview-area有两种形式的级联: 
 - 下拉菜单(基于iview的Select组件)
 - 级联选择(基于iview的Cascader组件)
-
-iview-area has two forms:
-- select(bases on the select component of iview)
-- cascader(bases on the cascader component of iview)
 
 # install 安装
 ```
@@ -18,14 +12,12 @@ iview-area has two forms:
 ```
 # use 使用
 在main.js中写入下面的代码
-write follow code in main.js  
 ```javascript
     import iviewArea from 'iview-area';
     import Vue from 'vue';
     Vue.use(iviewArea);
 ```
 接下来，你就可以在页面中使用iview-area了
-and then, you can use iview-area anywhere  
 ```vue
 <template>
     <al-selector v-model="res_s"/>
