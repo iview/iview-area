@@ -2,6 +2,8 @@
 
 > 一款基于Vue框架和iView-UI组件库开发的城市级联组件，数据包含中国的省(直辖市)、市、县区和街道，数据来源[area-data](https://github.com/dwqs/area-data)
 
+**[English Document](https://github.com/iview/iview-area/blob/dev/READEME_EN.md)**
+
 iview-area有两种形式的级联: 
 - 下拉菜单(基于iview的Select组件)
 - 级联选择(基于iview的Cascader组件)
