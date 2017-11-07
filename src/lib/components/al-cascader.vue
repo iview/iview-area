@@ -16,7 +16,6 @@
 </template>
 
 <script>
-// :disabled="disabled !== undefined ? disabled : disabled"
 import areaData from 'area-data';
 import util from '../util';
 const levelShow = (level, code) => {

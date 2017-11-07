@@ -6,8 +6,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'ivu-area-linkage.js',
-    library: 'IvuAreaLinkage',
+    filename: 'iview-area.js',
+    library: 'iviewArea',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

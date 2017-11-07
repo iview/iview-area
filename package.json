@@ -1,23 +1,23 @@
 {
-  "name": "ivu-area-linkage",
+  "name": "iview-area",
   "version": "1.0.7",
   "description": "An area-linkage-component bases on Vue and iView-UI components",
   "author": "Lison",
   "license": "MIT",
   "private": false,
-  "main": "./dist/ivu-area-linkage.js",
+  "main": "./dist/iview-area.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lison16/ivu-area-linkage.git"
+    "url": "git+https://github.com/iview/iview-area.git"
   },
   "bugs": {
-    "url": "https://github.com/lison16/ivu-area-linkage/issues"
+    "url": "https://github.com/iview/iview-area/issues"
   },
-  "homepage": "https://github.com/lison16/ivu-area-linkage#readme",
+  "homepage": "https://github.com/iview/iview-area#readme",
   "dependencies": {
     "area-data": "^1.0.0",
     "iview": "^2.6.0",

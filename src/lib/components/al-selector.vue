@@ -3,6 +3,7 @@
         <Row :gutter="gutterNum">
             <Col :span="span" v-if="show(0)">
                 <Select 
+                    ref="prov"
                     v-model="currPro"
                     @on-change="hasChange"
                     :filterable="searchable"
@@ -16,6 +17,7 @@
             </Col>
             <Col :span="span" v-if="show(1)">
                 <Select
+                    ref="city"
                     v-model="currCit"
                     @on-change="hasChange"
                     :filterable="searchable"
@@ -30,6 +32,7 @@
             </Col>
             <Col :span="span" v-if="show(2)">
                 <Select 
+                    ref="coun"
                     v-model="currCou"
                     @on-change="hasChange"
                     :filterable="searchable"
@@ -44,6 +47,7 @@
             </Col>
             <Col :span="span" v-if="show(3)">
                 <Select 
+                    ref="stre"
                     v-model="currStr"
                     @on-change="hasChange"
                     :filterable="searchable"
@@ -164,15 +168,21 @@ export default {
         },
         currCit (city) {
             this.updateNextSelector('cityIndex', 'cityList', 'counList', city, 'currCou', 1);
-            this.returnRes(1);
+            if (city) {
+                this.returnRes(1);
+            }
         },
         currCou (coun) {
             this.updateNextSelector('counIndex', 'counList', 'streList', coun, 'currStr', 2);
-            this.returnRes(2);
+            if (coun) {
+                this.returnRes(2);
+            }
         },
         currStr (str) {
             this.streIndex = util.getIndex(this.streList, str);
-            this.returnRes(3);
+            if (str) {
+                this.returnRes(3);
+            }
         }
     },
     methods: {
@@ -202,6 +212,9 @@ export default {
                 }
             }
             this[index] = util.getIndex(this[list], name);
+            if (this[index] === undefined) {
+                this.$refs[nextList.substr(0, 4)].setQuery('');
+            }
             this[nextList] = areaData[this[index]];
             if (this.isInit && this.default[level + 1]) {
                 let defaultNextItem = this.default[level + 1];

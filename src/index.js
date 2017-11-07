@@ -1,7 +1,7 @@
 import alSelector from './lib/components/al-selector.vue';
 import alCascader from './lib/components/al-cascader.vue';
 
-const IvuAreaLinkage = {
+const iviewArea = {
     alSelector,
     alCascader
 };
@@ -15,4 +15,4 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-export default Object.assign(IvuAreaLinkage, {install});
+export default Object.assign(iviewArea, {install});
