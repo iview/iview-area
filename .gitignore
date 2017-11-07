@@ -3,10 +3,6 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
-webpack.config.json
-.babelrc
-index.html
 
 # Editor directories and files
 .idea
