@@ -219,7 +219,7 @@
 					<h4>自定义所选数据显示格式</h4>
 					<example-block :height="60" level="0" val="这里不显示结果数据">
 						<div slot="ia">
-							<al-cascader level="3" :render-format="label => label.join(' => ')" style="width:280px;margin-right:10px;display:inline-block;"></al-cascader>
+							<al-cascader v-model="cRender" level="3" :render-format="label => label.join(' => ')" style="width:280px;margin-right:10px;display:inline-block;"></al-cascader>
 						</div>
 						<p slot="code">
 							&lt;al-cascader :render-format="label => label.join(' => ')" v-model="resArr" level="3" /&gt;<br/>
@@ -256,7 +256,8 @@ export default {
 			cSize: [],
 			cDisabled: [],
 			cPlaceholder: [],
-			cDefault: ['130000', '130700', '130730', '130730100000']
+			cDefault: ['130000', '130700', '130730', '130730100000'],
+			cRender: []
         };
     }
 }
