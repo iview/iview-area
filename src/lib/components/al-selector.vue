@@ -9,6 +9,7 @@
                     :filterable="searchable"
                     :placeholder="phHandled(0)"
                     :size="size"
+                    :not-found-text="ndsHandled(0)"
                     :disabled="disabled === undefined ? false : disHandled(0)"
                     transfer
                     style="width:100%">
@@ -23,7 +24,7 @@
                     :filterable="searchable"
                     :placeholder="phHandled(1)"
                     :size="size"
-                    :not-found-text="ndsHandled(0)"
+                    :not-found-text="ndsHandled(1)"
                     :disabled="disabled === undefined ? false : disHandled(1)"
                     transfer
                     style="width:100%">
@@ -38,7 +39,7 @@
                     :filterable="searchable"
                     :placeholder="phHandled(2)"
                     :size="size"
-                    :not-found-text="ndsHandled(1)"
+                    :not-found-text="ndsHandled(2)"
                     :disabled="disabled === undefined ? false : disHandled(2)"
                     transfer
                     style="width:100%">
@@ -53,7 +54,7 @@
                     :filterable="searchable"
                     :placeholder="phHandled(3)"
                     :size="size"
-                    :not-found-text="ndsHandled(2)"
+                    :not-found-text="ndsHandled(3)"
                     :disabled="disabled === undefined ? false : disHandled(3)"
                     transfer
                     style="width:100%">
@@ -88,7 +89,7 @@ export default {
             streIndex: 0,
             isInit: true,
             defaultPlaceholder: ['请选择省', '请选择市', '请选择县区', '请选择乡镇街'],
-            defaultnotFoundText: ['无匹配市', '无匹配县区', '无匹配乡镇街'],
+            defaultnotFoundText: ['无匹配省', '无匹配市', '无匹配县区', '无匹配乡镇街'],
             cloneValue: []
         };
     },
