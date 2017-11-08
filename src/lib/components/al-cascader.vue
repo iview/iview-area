@@ -52,8 +52,8 @@ export default {
     },
     data () {
         return {
-            select: [],
-            data: []
+            data: [],
+            select: []
         };
     },
     computed: {
@@ -129,6 +129,25 @@ export default {
             proData.push(proitem);
         }
         this.data = proData;
+        if (this.value[0]) {
+            if (isNaN(parseInt(this.value[0]))) {
+                let i = 0;
+                let select = [];
+                let index = '';
+                while (this.value[i]) {
+                    if (i === 0) {
+                        index = util.getIndex(areaData['86'], this.value[0]);
+                    } else {
+                        index = util.getIndex(areaData[index], this.value[i]);
+                    }
+                    select.push(index);
+                    i++;
+                }
+                this.select = select;
+            } else {
+                this.select = this.value;
+            }
+        }
     }
 };
 </script>
