@@ -306,7 +306,7 @@ export default {
         disHandled (level) {
             if (typeof this.disabled === 'number') {
                 if (util.oneOf(this.disabled, areaLinkageArr)) {
-                    if (level === this.disabled) {
+                    if (level >= this.disabled) {
                         return true;
                     } else {
                         return false;
