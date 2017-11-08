@@ -208,20 +208,6 @@
 							&lt;al-cascader :render-format="label => label.join(' => ')" v-model="resArr" level="3" /&gt;<br/>
 						</p>
 					</example-block>
-					<h4>触发显示下一级列表的方式</h4>
-					<example-block :height="60" level="0" :val="cTrigger">
-						<div slot="ia">
-							<al-cascader level="2" trigger="click" v-model="cTrigger" style="width:220px;margin-right:10px;display:inline-block;"></al-cascader>
-							<al-cascader trigger="hover" v-model="cTrigger" style="width:220px;margin-right:10px;display:inline-block;"></al-cascader>
-							<al-cascader
-                            v-model="cTrigger"
-                            style="margin-top:20px;width:50%;"
-                        />				    
-						</div>
-						<p slot="code">
-							&lt;al-cascader :render-format="label => label.join(' => ')" v-model="resArr" level="2" /&gt;<br/>
-						</p>
-					</example-block>
 				</div>
 			</Card>
 		</div>
@@ -252,8 +238,7 @@ export default {
 			cDataType: [],
 			cSize: [],
 			cDisabled: [],
-			cPlaceholder: [],
-			cTrigger: []
+			cPlaceholder: []
         };
     }
 }
