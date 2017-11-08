@@ -84,29 +84,42 @@
 							&lt;al-selector level="2" v-model="sDisabled" :disbled="1" /&gt;<br/>
 						</p>
 					</example-block>
-					<h4>禁用</h4>
-					<example-block :height="140" level="2" :val="sDisabled">
-						<div slot="ia">
-							<al-selector level="2" v-model="sDisabled" disabled style="width:540px;margin-bottom:10px;"></al-selector>
-							<al-selector level="2" v-model="sDisabled" :disabled="[1, 2]" style="width:540px;margin-bottom:10px;"></al-selector>
-							<al-selector level="2" v-model="sDisabled" :disabled="1" style="width:540px;"></al-selector>
-						</div>
-						<p slot="code">
-							&lt;al-selector level="2" v-model="sDisabled" disabled /&gt;<br/>
-							&lt;al-selector level="2" v-model="sDisabled" :disbled="[1, 2]" /&gt;<br/>
-							&lt;al-selector level="2" v-model="sDisabled" :disbled="1" /&gt;<br/>
-						</p>
-					</example-block>
 					<h4>默认数据</h4>
 					<example-block :height="140" level="2" :val="sDefault">
 						<div slot="ia">
-							<al-selector auto level="2" v-model="sDefault" style="width:540px;margin-bottom:10px;"></al-selector>
+							<al-selector level="2" v-model="sDefault" style="width:540px;margin-bottom:10px;"></al-selector>
 						</div>
 						<p slot="code">
 							&lt;al-selector level="2" v-model="sDefault" /&gt;<br/>
-							sDefault: ['河北省', '张家口市', '怀来县']
+							sDefault: ['河北省', '张家口市', '怀来县']<br/>
 							&lt;al-selector level="2" v-model="sDefault" /&gt;<br/>
 							sDefault: ['130000', '130700', '130730']
+						</p>
+					</example-block>
+					<h4>设置占位符文字</h4>
+					<example-block :height="140" level="2" :val="sPlaceholder">
+						<div slot="ia">
+							<al-selector level="2" placeholder="自己设置占位符" v-model="sPlaceholder" :disabled="1" style="width:540px;margin-bottom:10px;"></al-selector>
+							<al-selector level="2" :placeholder="['省', '市', '县']" v-model="sPlaceholder" :disabled="1" style="width:540px;margin-bottom:10px;"></al-selector>
+							<al-selector level="2" :placeholder="['省', '市']" v-model="sPlaceholder" :disabled="1" style="width:540px;"></al-selector>	
+						</div>
+						<p slot="code">
+							&lt;al-selector placeholder="自己设置占位符" level="2" v-model="sDefault"  :disabled="1" /&gt;<br/>
+							&lt;al-selector placeholder="['省', '市', '县']" level="2" v-model="sDefault" :disabled="1" /&gt;<br/>
+							&lt;al-selector placeholder="['省', '市']" level="2" v-model="sDefault" :disabled="1" /&gt;<br/>
+						</p>
+					</example-block>
+					<h4>设置搜索无匹配数据时提示文字</h4>
+					<example-block :height="140" level="1" :val="sNotFound">
+						<div slot="ia">
+							<al-selector searchable level="1" v-model="sNotFound" style="width:540px;margin-bottom:10px;"></al-selector>
+							<al-selector searchable level="1" v-model="sNotFound" style="width:540px;margin-bottom:10px;"></al-selector>
+							<al-selector searchable level="1" v-model="sNotFound" style="width:540px;"></al-selector>	
+						</div>
+						<p slot="code">
+							&lt;al-selector placeholder="自己设置占位符" level="2" v-model="sDefault"  :disabled="1" /&gt;<br/>
+							&lt;al-selector placeholder="['省', '市', '县']" level="2" v-model="sDefault" :disabled="1" /&gt;<br/>
+							&lt;al-selector placeholder="['省', '市']" level="2" v-model="sDefault" :disabled="1" /&gt;<br/>
 						</p>
 					</example-block>
 				</div>
@@ -130,7 +143,9 @@ export default {
 			sSize: [],
 			sSearch: [],
 			sDisabled: [],
-			sDefault: ['河北省', '张家口市', '怀来县']
+			sDefault: ['河北省', '张家口市', '怀来县'],
+			sPlaceholder: [],
+			sNotFound: []
         };
     }
 }
