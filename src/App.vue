@@ -4,6 +4,11 @@
 			<div class="logo-con">
 				<img src="./logo.png" alt="iview">
 			</div>
+			<div class="link-con">
+				<a target="_block" href="https://www.iviewui.com/">iView</a>
+				<a target="_block" href="https://github.com/iview/iview-admin">iView-admin</a>
+				<a target="_block" href="https://github.com/iview/iview-area">Github</a>
+			</div>
 		</div>
 		<div class="main">
 			<Card dis-hover shadow>
@@ -273,9 +278,22 @@ html,body{
 	margin: 5px 100px;
 	display: inline-block;
 }
+.link-con{
+	float: right;
+	margin-right: 100px;
+	height: 70px;
+}
 .logo-con img{
 	height: 100%;
 	width: auto;
+}
+.link-con a{
+	display: block;
+	float: left;
+	height: 100%;
+	font-size: 16px;
+	line-height: 70px;
+	margin: 0 10px;
 }
 .main-con h1{
 	text-align: center;
