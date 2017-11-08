@@ -26,7 +26,7 @@
 export default {
     name: 'exampleBlock',
     props: {
-        val: Array,
+        val: [Array, String],
         level: String,
         height: Number
     }

@@ -110,16 +110,116 @@
 						</p>
 					</example-block>
 					<h4>设置搜索无匹配数据时提示文字</h4>
-					<example-block :height="140" level="1" :val="sNotFound">
+					<example-block :height="140" level="2" :val="sNotFound">
 						<div slot="ia">
-							<al-selector searchable level="1" v-model="sNotFound" style="width:540px;margin-bottom:10px;"></al-selector>
-							<al-selector searchable level="1" v-model="sNotFound" style="width:540px;margin-bottom:10px;"></al-selector>
-							<al-selector searchable level="1" v-model="sNotFound" style="width:540px;"></al-selector>	
+							<al-selector searchable not-found-text="自己设置无匹配提示" level="2" v-model="sNotFound" style="width:540px;margin-bottom:10px;"></al-selector>
+							<al-selector searchable :not-found-text="['无此省', '无此市', '无此县']" level="2" v-model="sNotFound" style="width:540px;margin-bottom:10px;"></al-selector>
+							<al-selector searchable :not-found-text="['无此省', '无此市']" level="2" v-model="sNotFound" style="width:540px;"></al-selector>	
 						</div>
 						<p slot="code">
-							&lt;al-selector placeholder="自己设置占位符" level="2" v-model="sDefault"  :disabled="1" /&gt;<br/>
-							&lt;al-selector placeholder="['省', '市', '县']" level="2" v-model="sDefault" :disabled="1" /&gt;<br/>
-							&lt;al-selector placeholder="['省', '市']" level="2" v-model="sDefault" :disabled="1" /&gt;<br/>
+							&lt;al-selector not-found-text="自己设置无匹配提示" level="2" v-model="sNotFound" /&gt;<br/>
+							&lt;al-selector :not-found-text="['无此省', '无此市', '无此县']" level="2" v-model="sNotFound" /&gt;<br/>
+							&lt;al-selector :not-found-text="['无此省', '无此市']" level="2" v-model="sNotFound" /&gt;<br/>
+						</p>
+					</example-block>
+					<h4>自动默认选择</h4>
+					<example-block :height="260" level="3" :val="sAuto">
+                        <al-selector v-model="sAuto" auto slot="ia" style="width:100%;"></al-selector>
+						<span slot="code">
+							&lt;al-selector auto v-model="resArr" /&gt;
+						</span>
+					</example-block>
+					<h2>Cascader形式</h2>
+					<h4>基本使用</h4>
+					<example-block :height="260" level="3" :val="cBasic">
+                        <al-cascader v-model="cBasic" slot="ia" style="width:240px;"/>
+						<span slot="code">
+							&lt;al-cascader v-model="resArr" /&gt;
+						</span>
+					</example-block>
+					<h4>设置显示级别</h4>
+					<example-block :height="180" level="3" :val="cLevel">
+						<div slot="ia">
+							<al-cascader level="0" v-model="cLevel" style="width:240px;margin-bottom:10px;"/>
+							<al-cascader level="1" v-model="cLevel" style="width:240px;margin-bottom:10px;"/>
+							<al-cascader level="2" v-model="cLevel" style="width:240px;margin-bottom:10px;"/>
+							<al-cascader level="3" v-model="cLevel" style="width:240px;"/>
+						</div>
+						<p slot="code">
+							&lt;al-cascader v-model="resArr" level="0" /&gt;<br/>
+							&lt;al-cascader v-model="resArr" :level="0" /&gt;<br/>
+							&lt;al-cascader v-model="resArr" level="1" /&gt;<br/>
+							&lt;al-cascader v-model="resArr" level="2" /&gt;<br/>
+							&lt;al-cascader v-model="resArr" level="3" /&gt;
+						</p>
+					</example-block>
+					<h4>三种返回值类型</h4>
+					<example-block :height="140" level="2" :val="cDataType">
+						<div slot="ia">
+							<div style="margin-bottom:10px;"><span style="display:inline-block;vertical-align:top;padding-top:6px;">datatype="all"</span><al-cascader data-type="all" level="2" v-model="cDataType" style="width:200px;margin-left:30px;display:inline-block;"></al-cascader></div>
+							<div style="margin-bottom:10px;"><span style="display:inline-block;vertical-align:top;padding-top:6px;">datatype="name"</span><al-cascader data-type="name" level="2" v-model="cDataType" style="width:200px;margin-left:10px;display:inline-block;"></al-cascader></div>
+							<div><span style="display:inline-block;vertical-align:top;padding-top:6px;">datatype="code"</span><al-cascader data-type="code" level="2" v-model="cDataType" style="width:200px;margin-left:13px;display:inline-block;"></al-cascader></div>
+						</div>
+						<p slot="code">
+							&lt;al-cascader v-model="resArr" level="2" /&gt;<br/>
+							&lt;al-cascader data-type="all" v-model="resArr" level="2" /&gt;<br/>
+							&lt;al-cascader data-type="name" v-model="resArr" level="2" /&gt;<br/>
+							&lt;al-cascader data-type="code" v-model="resArr" level="2" /&gt;
+						</p>
+					</example-block>
+					<h4>三种尺寸</h4>
+					<example-block :height="140" level="1" :val="cSize">
+						<div slot="ia">
+							<al-cascader level="1" size="large" v-model="cSize" style="width:160px;margin-right:10px;display:inline-block;"></al-cascader>
+							<al-cascader level="1" v-model="cSize" style="width:160px;margin-right:10px;display:inline-block;"></al-cascader>
+							<al-cascader level="1" size="small" v-model="cSize" style="width:160px;margin-right:10px;display:inline-block;"></al-cascader>
+						</div>
+						<p slot="code">
+							&lt;al-cascader size="large" v-model="resArr" level="1" /&gt;<br/>
+							&lt;al-cascader size="default" v-model="resArr" level="1" /&gt;<br/>
+							&lt;al-cascader v-model="resArr" level="1" /&gt;<br/>
+							&lt;al-cascader size="small" v-model="resArr" level="1" /&gt;
+						</p>
+					</example-block>
+					<h4>禁用</h4>
+					<example-block :height="70" level="0" :val="cDisabled">
+						<div slot="ia">
+							<al-cascader disabled level="0" v-model="cSize" style="width:160px;margin-right:10px;display:inline-block;"></al-cascader>
+						</div>
+						<p slot="code">
+							&lt;al-cascader disabled v-model="resArr" level="0" /&gt;<br/>
+						</p>
+					</example-block>
+					<h4>占位符</h4>
+					<example-block :height="70" level="0" :val="cPlaceholder">
+						<div slot="ia">
+							<al-cascader level="0" placeholder="自设占位符" v-model="cPlaceholder" style="width:160px;margin-right:10px;display:inline-block;"></al-cascader>
+						</div>
+						<p slot="code">
+							&lt;al-cascader placeholder="自设占位符" v-model="resArr" level="0" /&gt;<br/>
+						</p>
+					</example-block>
+					<h4>自定义所选数据显示格式</h4>
+					<example-block :height="60" level="0" val="这里不显示结果数据">
+						<div slot="ia">
+							<al-cascader level="3" :render-format="label => label.join(' => ')" style="width:280px;margin-right:10px;display:inline-block;"></al-cascader>
+						</div>
+						<p slot="code">
+							&lt;al-cascader :render-format="label => label.join(' => ')" v-model="resArr" level="3" /&gt;<br/>
+						</p>
+					</example-block>
+					<h4>触发显示下一级列表的方式</h4>
+					<example-block :height="60" level="0" :val="cTrigger">
+						<div slot="ia">
+							<al-cascader level="2" trigger="click" v-model="cTrigger" style="width:220px;margin-right:10px;display:inline-block;"></al-cascader>
+							<al-cascader trigger="hover" v-model="cTrigger" style="width:220px;margin-right:10px;display:inline-block;"></al-cascader>
+							<al-cascader
+                            v-model="cTrigger"
+                            style="margin-top:20px;width:50%;"
+                        />				    
+						</div>
+						<p slot="code">
+							&lt;al-cascader :render-format="label => label.join(' => ')" v-model="resArr" level="2" /&gt;<br/>
 						</p>
 					</example-block>
 				</div>
@@ -145,7 +245,15 @@ export default {
 			sDisabled: [],
 			sDefault: ['河北省', '张家口市', '怀来县'],
 			sPlaceholder: [],
-			sNotFound: []
+			sNotFound: [],
+			sAuto: [],
+			cBasic: [],
+			cLevel: [],
+			cDataType: [],
+			cSize: [],
+			cDisabled: [],
+			cPlaceholder: [],
+			cTrigger: []
         };
     }
 }
