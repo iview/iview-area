@@ -1,6 +1,6 @@
 # iview-area
 
-> 一款基于Vue框架和iView-UI组件库开发的城市级联组件，数据包含中国的省(直辖市)、市、县区和街道，数据来源[area-data](https://github.com/dwqs/area-data)
+> 一款基于Vue框架和iView-UI组件库开发的城市级联组件，数据包含中国的省(直辖市)、市、县区和乡镇街，数据来源[area-data](https://github.com/dwqs/area-data)
 
 **[English Document](https://github.com/iview/iview-area/blob/dev/READEME_EN.md)**
 
