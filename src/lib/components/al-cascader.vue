@@ -147,7 +147,7 @@ export default {
             } else {
                 this.select = this.value;
             }
-            this.$emit('input', this.procesValue(select));
+            this.$emit('input', this.procesValue(this.select));
         }
     }
 };
