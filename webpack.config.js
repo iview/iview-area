@@ -2,26 +2,28 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'iview-area.js',
-    library: 'iviewArea',
-    libraryTarget: 'umd',
-    umdNamedDefine: true
-  },
-  externals: {
-    vue: {
-     root: 'Vue',
-     commonjs: 'vue',
-     commonjs2: 'vue',
-     amd: 'vue'
-    }
+    publicPath: 'https://iview.github.io/iview-admin/dist/',
+    filename: 'build.js'
   },
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ],
+      },      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
@@ -29,10 +31,6 @@ module.exports = {
           }
           // other vue-loader options go here
         }
-      },
-      {
-        test: /iview\/.*?js$/,
-        loader: 'babel-loader'
       },
       {
         test: /\.js$/,
@@ -51,7 +49,8 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
-    }
+    },
+    extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
     historyApiFallback: true,
