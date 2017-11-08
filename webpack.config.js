@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: 'https://iview.github.io/iview-area/dist/',
     filename: 'build.js'
   },
   module: {
