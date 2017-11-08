@@ -97,6 +97,19 @@
 							&lt;al-selector level="2" v-model="sDisabled" :disbled="1" /&gt;<br/>
 						</p>
 					</example-block>
+					<h4>默认数据</h4>
+					<example-block :height="140" level="2" :val="sDisabled">
+						<div slot="ia">
+							<al-selector level="2" v-model="sDisabled" disabled style="width:540px;margin-bottom:10px;"></al-selector>
+							<al-selector level="2" v-model="sDisabled" :disabled="[1, 2]" style="width:540px;margin-bottom:10px;"></al-selector>
+							<al-selector level="2" v-model="sDisabled" :disabled="1" style="width:540px;"></al-selector>
+						</div>
+						<p slot="code">
+							&lt;al-selector level="2" v-model="sDisabled" disabled /&gt;<br/>
+							&lt;al-selector level="2" v-model="sDisabled" :disbled="[1, 2]" /&gt;<br/>
+							&lt;al-selector level="2" v-model="sDisabled" :disbled="1" /&gt;<br/>
+						</p>
+					</example-block>
 				</div>
 			</Card>
 		</div>
@@ -172,7 +185,7 @@ html,body{
 	border-left: 5px solid #2d8cf0;
 }
 .main-con h4{
-	margin: 14px 2px 6px;
+	margin: 22px 2px 6px;
 	padding-left: 10px;
 	border-left: 3px solid #19be6b; 
 }
