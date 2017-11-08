@@ -98,14 +98,15 @@
 						</p>
 					</example-block>
 					<h4>默认数据</h4>
-					<example-block :height="140" level="2" :val="sDisabled">
+					<example-block :height="140" level="2" :val="sDefault">
 						<div slot="ia">
-							<al-selector level="2" v-model="sDefault" style="width:540px;margin-bottom:10px;"></al-selector>
-							<!-- <al-selector level="2" v-model="sDefault" style="width:540px;"></al-selector> -->
+							<al-selector auto level="2" v-model="sDefault" style="width:540px;margin-bottom:10px;"></al-selector>
 						</div>
 						<p slot="code">
 							&lt;al-selector level="2" v-model="sDefault" /&gt;<br/>
+							sDefault: ['河北省', '张家口市', '怀来县']
 							&lt;al-selector level="2" v-model="sDefault" /&gt;<br/>
+							sDefault: ['130000', '130700', '130730']
 						</p>
 					</example-block>
 				</div>
