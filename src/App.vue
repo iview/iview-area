@@ -195,6 +195,18 @@
 							&lt;al-cascader disabled v-model="resArr" level="0" /&gt;<br/>
 						</p>
 					</example-block>
+					<h4>默认数据</h4>
+					<example-block :height="210" level="3" :val="cDefault">
+						<div slot="ia">
+							<al-cascader v-model="cDefault" style="width:540px;margin-bottom:10px;"></al-cascader>
+						</div>
+						<p slot="code">
+							&lt;al-cascader level="2" v-model="cDefault" /&gt;<br/>
+							cDefault: ['河北省', '张家口市', '怀来县']<br/>
+							&lt;al-cascader level="2" v-model="cDefault" /&gt;<br/>
+							cDefault: ['130000', '130700', '130730', '130730100000']
+						</p>
+					</example-block>
 					<h4>占位符</h4>
 					<example-block :height="70" level="0" :val="cPlaceholder">
 						<div slot="ia">
@@ -243,7 +255,8 @@ export default {
 			cDataType: [],
 			cSize: [],
 			cDisabled: [],
-			cPlaceholder: []
+			cPlaceholder: [],
+			cDefault: ['130000', '130700', '130730', '130730100000']
         };
     }
 }
