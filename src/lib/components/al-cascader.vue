@@ -130,9 +130,9 @@ export default {
         }
         this.data = proData;
         if (this.value[0]) {
+            let select = [];
             if (isNaN(parseInt(this.value[0]))) {
                 let i = 0;
-                let select = [];
                 let index = '';
                 while (this.value[i]) {
                     if (i === 0) {
@@ -147,6 +147,7 @@ export default {
             } else {
                 this.select = this.value;
             }
+            this.$emit('input', this.procesValue(select));
         }
     }
 };
