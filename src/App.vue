@@ -2,7 +2,7 @@
     <div id="app">
 		<div class="header">
 			<div class="logo-con">
-				<img src="~img/logo.png" alt="iview">
+				<img src="./assets/img/logo.png" alt="iview">
 			</div>
 			<div class="link-con">
 				<a target="_block" href="https://www.iviewui.com/">iView</a>
