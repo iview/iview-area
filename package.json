@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "iview": "^2.6.0",
-    "iview-area": "^1.1.0",
+    "iview-area": "^1.2.0",
     "vue": "^2.4.4"
   },
   "browserslist": [

@@ -100,14 +100,12 @@
 					<h4>默认数据</h4>
 					<example-block :height="140" level="2" :val="sDisabled">
 						<div slot="ia">
-							<al-selector level="2" v-model="sDisabled" disabled style="width:540px;margin-bottom:10px;"></al-selector>
-							<al-selector level="2" v-model="sDisabled" :disabled="[1, 2]" style="width:540px;margin-bottom:10px;"></al-selector>
-							<al-selector level="2" v-model="sDisabled" :disabled="1" style="width:540px;"></al-selector>
+							<al-selector level="2" v-model="sDefault" style="width:540px;margin-bottom:10px;"></al-selector>
+							<!-- <al-selector level="2" v-model="sDefault" style="width:540px;"></al-selector> -->
 						</div>
 						<p slot="code">
-							&lt;al-selector level="2" v-model="sDisabled" disabled /&gt;<br/>
-							&lt;al-selector level="2" v-model="sDisabled" :disbled="[1, 2]" /&gt;<br/>
-							&lt;al-selector level="2" v-model="sDisabled" :disbled="1" /&gt;<br/>
+							&lt;al-selector level="2" v-model="sDefault" /&gt;<br/>
+							&lt;al-selector level="2" v-model="sDefault" /&gt;<br/>
 						</p>
 					</example-block>
 				</div>
@@ -130,7 +128,8 @@ export default {
 			sDataType: [],
 			sSize: [],
 			sSearch: [],
-			sDisabled: []
+			sDisabled: [],
+			sDefault: ['河北省', '张家口市', '怀来县']
         };
     }
 }
