@@ -129,7 +129,7 @@ export default {
             proData.push(proitem);
         }
         this.data = proData;
-        if (this.value[0]) {
+        if (this.value && this.value[0]) {
             let select = [];
             if (isNaN(parseInt(this.value[0]))) {
                 let i = 0;
