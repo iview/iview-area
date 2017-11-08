@@ -87,8 +87,8 @@ export default {
             counIndex: 0,
             streIndex: 0,
             isInit: true,
-            defaultPlaceholder: ['请选择省', '请选择市', '请选择县区', '请选择街道'],
-            defaultnotFoundText: ['无匹配市', '无匹配县区', '无匹配街道'],
+            defaultPlaceholder: ['请选择省', '请选择市', '请选择县区', '请选择乡镇街'],
+            defaultnotFoundText: ['无匹配市', '无匹配县区', '无匹配乡镇街'],
             cloneValue: []
         };
     },
@@ -193,54 +193,54 @@ export default {
             }
         },
         updateNextSelector (index, list, nextList, name, nextName, level) {
-            let nextSelected = '';
-            if (this.isInit && this.value[level]) {
-                let valueItem = this.value[level];
-                if (isNaN(parseInt(valueItem))) {
-                    if (util.getIndex(this[list], this.value[level])) {
-                        name = valueItem;
-                    }
-                } else {
-                    if (Object.keys(this[list]).indexOf(this.value[level]) > -1) {
-                        if (level === 0) {
-                            name = areaData[86][this.value[level]];
-                        } else {
-                            name = areaData[this.value[level - 1]][this.value[level]];
+            if (level < this.showLevel) {
+                let nextSelected = '';
+                if (this.isInit && this.value[level]) {
+                    let valueItem = this.value[level];
+                    if (isNaN(parseInt(valueItem))) {
+                        if (util.getIndex(this[list], this.value[level])) {
+                            name = valueItem;
+                        }
+                    } else {
+                        if (Object.keys(this[list]).indexOf(this.value[level]) > -1) {
+                            if (level === 0) {
+                                name = areaData[86][this.value[level]];
+                            } else {
+                                name = areaData[this.value[level - 1]][this.value[level]];
+                            }
                         }
                     }
                 }
-            }
-            this[index] = util.getIndex(this[list], name);
-            if (this[index] === undefined) {
-                this.$refs[nextList.substr(0, 4)].setQuery('');
-            }
-            this[nextList] = areaData[this[index]];
-            if (this.isInit && this.cloneValue[level + 1]) {
-                let valueNextItem = this.cloneValue[level + 1];
-                if (isNaN(parseInt(valueNextItem))) {
-                    if (util.getIndex(this[nextList], this.cloneValue[level + 1])) {
-                        nextSelected = this.cloneValue[level + 1];
-                    }
-                } else {
-                    if (Object.keys(this[nextList]).indexOf(this.cloneValue[level + 1]) > -1) {
-                        nextSelected = areaData[this.cloneValue[level]][this.cloneValue[level + 1]];
+                this[index] = util.getIndex(this[list], name);
+                if (this[index] === undefined) {
+                    this.$refs[nextList.substr(0, 4)].setQuery('');
+                }
+                this[nextList] = areaData[this[index]];
+                if (this.isInit && this.cloneValue[level + 1]) {
+                    let valueNextItem = this.cloneValue[level + 1];
+                    if (isNaN(parseInt(valueNextItem))) {
+                        if (util.getIndex(this[nextList], this.cloneValue[level + 1])) {
+                            nextSelected = this.cloneValue[level + 1];
+                        }
+                    } else {
+                        if (Object.keys(this[nextList]).indexOf(this.cloneValue[level + 1]) > -1) {
+                            nextSelected = areaData[this.cloneValue[level]][this.cloneValue[level + 1]];
+                        }
                     }
                 }
-            }
-            if (this.isInit && this.value.length !== 0) {
-                this[nextName] = nextSelected || this.setNextSelect(index);
-            } else if (!this.isInit && this.auto) {
-                this[nextName] = nextSelected || this.setNextSelect(index);
-            }
-            if (this.isInit && level === this.showLevel) {
-                this.returnRes(level);
+                if (this.isInit && this.value.length !== 0) {
+                    this[nextName] = nextSelected || this.setNextSelect(index);
+                } else if (!this.isInit && this.auto) {
+                    this[nextName] = nextSelected || this.setNextSelect(index);
+                }
+                if (this.isInit && level === this.showLevel) {
+                    this.returnRes(level);
+                }
             }
         },
         returnRes (level) {
             if (this.auto) {
-                if (this.showLevel === level) {
-                    this.returnResArr(this.showLevel);
-                }
+                this.returnResArr(this.showLevel);
             } else {
                 this.returnResArr(level);
             }
