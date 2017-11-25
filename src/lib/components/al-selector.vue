@@ -189,18 +189,19 @@ export default {
     },
     methods: {
         init () {
-            if (this.value && this.value.length > 0) {
-                this.cloneValue = this.value;
-                if (isNaN(parseInt(this.value[0]))) {
-                    if (util.getIndex(this.provList, this.value[0])) {
-                        this.currPro = this.value[0];
-                    }
-                } else {
-                    if (this.value[0]) {
-                        if (areaData[86][this.value[0]]) {
-                            this.currPro = areaData[86][this.value[0]];
-                            this.provIndex = this.value[0];
-                        }
+            if (util.isObject(this.value[0])) {
+                if (util.getIndexByKey(this.provList, this.value[0])) {
+                    this.currPro = this.value[0].name;
+                }
+            } else if (isNaN(parseInt(this.value[0]))) {
+                if (util.getIndex(this.provList, this.value[0])) {
+                    this.currPro = this.value[0];
+                }
+            } else {
+                if (this.value[0]) {
+                    if (areaData[86][this.value[0]]) {
+                        this.currPro = areaData[86][this.value[0]];
+                        this.provIndex = this.value[0];
                     }
                 }
             }
