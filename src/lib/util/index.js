@@ -15,6 +15,11 @@ util.getIndex = (list, name) => {
     }
 };
 
+util.isObject = (value) => {
+    const type = typeof value;
+    return value !== null && (type === 'object' || type === 'function');
+};
+
 util.dataType = ['all', 'code', 'name'];
 
 util.checkLevel = val => {
