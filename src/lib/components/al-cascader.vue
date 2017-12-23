@@ -54,7 +54,8 @@ export default {
         return {
             data: [],
             select: [],
-            isInit: true
+            isInit: true,
+            oldData: []
         };
     },
     computed: {
@@ -97,11 +98,32 @@ export default {
                 } else {
                     this.select = this.value;
                 }
-                this.$emit('input', this.procesValue(this.select));
+                let res = this.procesValue(this.select);
+                this.oldData = res;
+                this.$emit('input', res);
+                this.$emit('on-change', res);
             }
+        },
+        canEmit (res) {
+            let ifEmit = false;
+            if (this.value && this.value.length !== 0) {
+                if (typeof res[0] === 'string') {
+                    if (this.value[this.value.length - 1] !== this.oldData[this.oldData.length - 1]) {
+                        ifEmit = true;
+                    }
+                } else {
+                    if (this.oldData && this.oldData.length !== 0 && this.value[this.value.length - 1].code !== this.oldData[this.oldData.length - 1].code) {
+                        ifEmit = true;
+                    }
+                }
+            } else {
+                ifEmit = true;
+            }
+            return ifEmit;
         },
         handleChange (resArr) {
             let res = this.procesValue(resArr);
+            this.oldData = res;
             this.$emit('input', res);
             this.$emit('on-change', res);
         },
@@ -152,13 +174,13 @@ export default {
     },
     mounted () {
         this.init();
-        // this.setDefaultValue();
     },
-    updated () {
-        if (this.isInit) {
-            this.setDefaultValue();
+    watch: {
+        value (val) {
+            if (this.canEmit(this.value)) {
+                this.setDefaultValue();
+            }
         }
-        this.isInit = false;
     }
 };
 </script>
