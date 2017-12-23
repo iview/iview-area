@@ -71,7 +71,7 @@ export default {
                     label: areaData['86'][p],
                     children: []
                 };
-                if (this.showLevel > 0) {
+                if (this.showLevel > 0 && areaData[p]) {
                     proitem.loading = false;
                 }
                 proData.push(proitem);
@@ -106,7 +106,6 @@ export default {
             this.$emit('on-change', res);
         },
         loadData (item, callback) {
-            item.loading = true;
             let childData = [];
             let childs = areaData[item.value];
             for (const c in childs) {
@@ -115,10 +114,8 @@ export default {
                     label: areaData[item.value][c],
                     children: []
                 };
-                if (areaData[Object.keys(areaData[item.value])[0]]) {
-                    if (levelShow(this.showLevel, item.value)) {
-                        childitem.loading = false;
-                    }
+                if (areaData[childitem.value] && levelShow(this.showLevel, item.value)) {
+                    childitem.loading = false;
                 }
                 childData.push(childitem);
                 item.children = childData;
