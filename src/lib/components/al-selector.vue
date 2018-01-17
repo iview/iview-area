@@ -12,7 +12,7 @@
                     :not-found-text="ndsHandled(0)"
                     :disabled="disabled === undefined ? false : disHandled(0)"
                     transfer
-                    clearable
+                    :clearable="clearable"
                     style="width:100%">
                     <Option v-for="item in provList" :value="item" :key="item">{{ item }}</Option>
                 </Select>
@@ -28,7 +28,7 @@
                     :not-found-text="ndsHandled(1)"
                     :disabled="disabled === undefined ? false : disHandled(1)"
                     transfer
-                    clearable
+                    :clearable="clearable"
                     style="width:100%">
                     <Option v-for="item in cityList" :value="item" :key="item">{{ item }}</Option>
                 </Select>
@@ -44,7 +44,7 @@
                     :not-found-text="ndsHandled(2)"
                     :disabled="disabled === undefined ? false : disHandled(2)"
                     transfer
-                    clearable
+                    :clearable="clearable"
                     style="width:100%">
                     <Option v-for="item in counList" :value="item" :key="item">{{ item }}</Option>
                 </Select>
@@ -60,7 +60,7 @@
                     :not-found-text="ndsHandled(3)"
                     :disabled="disabled === undefined ? false : disHandled(3)"
                     transfer
-                    clearable
+                    :clearable="clearable"
                     style="width:100%">
                     <Option v-for="item in streList" :value="item" :key="item">{{ item }}</Option>
                 </Select>
@@ -115,6 +115,10 @@ export default {
         searchable: {
             type: Boolean,
             default: false
+        },
+        clearable: {
+            type: Boolean,
+            default: true
         },
         dataType: {
             type: String,
