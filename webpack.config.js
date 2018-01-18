@@ -11,17 +11,15 @@ module.exports = {
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
-  externals: {
-    vue: {
-     root: 'Vue',
-     commonjs: 'vue',
-     commonjs2: 'vue',
-     amd: 'vue'
-    }
-  },
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ],
+      },      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
@@ -29,10 +27,6 @@ module.exports = {
           }
           // other vue-loader options go here
         }
-      },
-      {
-        test: /iview\/.*?js$/,
-        loader: 'babel-loader'
       },
       {
         test: /\.js$/,
@@ -51,7 +45,8 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
-    }
+    },
+    extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
     historyApiFallback: true,
