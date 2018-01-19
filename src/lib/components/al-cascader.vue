@@ -174,6 +174,9 @@ export default {
     },
     mounted () {
         this.init();
+        if (this.canEmit(this.value)) {
+            this.setDefaultValue();
+        }
     },
     watch: {
         value (val) {
