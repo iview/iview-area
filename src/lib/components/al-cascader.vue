@@ -1,7 +1,7 @@
 <template>
     <div>
-        <Cascader 
-            v-model="select" 
+        <Cascader
+            v-model="select"
             :data="data"
             :load-data="loadData"
             transfer
@@ -102,6 +102,8 @@ export default {
                 this.oldData = res;
                 this.$emit('input', res);
                 this.$emit('on-change', res);
+            } else if (this.value.constructor === Array) {
+                this.oldData = this.select = this.value;
             }
         },
         canEmit (res) {
