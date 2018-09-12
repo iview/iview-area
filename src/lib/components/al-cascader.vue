@@ -130,6 +130,11 @@ export default {
         loadData (item, callback) {
             let childData = [];
             let childs = areaData[item.value];
+            childData.push({
+                value: '',
+                label: '全部',
+                children: []
+            });
             for (const c in childs) {
                 let childitem = {
                     value: c,
