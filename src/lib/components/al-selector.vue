@@ -2,7 +2,7 @@
     <div>
         <Row :gutter="gutterNum">
             <Col :span="span" v-if="show(0)">
-                <Select 
+                <Select
                     ref="prov"
                     v-model="currPro"
                     @on-change="hasChange"
@@ -32,7 +32,7 @@
                 </Select>
             </Col>
             <Col :span="span" v-if="show(2)">
-                <Select 
+                <Select
                     ref="coun"
                     v-model="currCou"
                     @on-change="hasChange"
@@ -47,7 +47,7 @@
                 </Select>
             </Col>
             <Col :span="span" v-if="show(3)">
-                <Select 
+                <Select
                     ref="stre"
                     v-model="currStr"
                     @on-change="hasChange"
@@ -354,7 +354,7 @@ export default {
             } else if (Array.isArray(this.disabled)) {
                 let i = 0;
                 let isDis = false;
-                while (this.disabled[i]) {
+                while (typeof this.disabled[i] === 'number') {
                     if (this.disabled[i] === level) {
                         isDis = true;
                         break;
