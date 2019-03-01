@@ -1,6 +1,6 @@
 {
   "name": "iview-area",
-  "version": "1.5.17",
+  "version": "1.6.0",
   "description": "An area-linkage-component bases on Vue and iView-UI components",
   "author": "Lison",
   "license": "MIT",
@@ -20,8 +20,8 @@
   "homepage": "https://github.com/iview/iview-area#readme",
   "dependencies": {
     "area-data": "^1.0.0",
-    "iview": "^2.6.0",
-    "vue": "^2.5.2"
+    "iview": "^3.0.0",
+    "vue": "^2.5.17"
   },
   "keywords": [
     "vue",
@@ -39,7 +39,7 @@
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
     "vue-loader": "^13.0.5",
-    "vue-template-compiler": "^2.4.4",
+    "vue-template-compiler": "^2.5.17",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   },
