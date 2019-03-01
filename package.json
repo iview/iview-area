@@ -1,7 +1,7 @@
 {
-  "name": "iview-area",
-  "version": "1.6.0",
-  "description": "An area-linkage-component bases on Vue and iView-UI components",
+  "name": "qht-iview-area",
+  "version": "1.6.111",
+  "description": "因官方的有不能重复赋值的bug.所以这里单独发布一个",
   "author": "Lison",
   "license": "MIT",
   "private": false,
@@ -12,16 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iview/iview-area.git"
+    "url": "git+https://github.com/xingzhefeng/iview-area.git"
   },
   "bugs": {
-    "url": "https://github.com/iview/iview-area/issues"
+    "url": "https://github.com/xingzhefeng/iview-area"
   },
   "homepage": "https://github.com/iview/iview-area#readme",
   "dependencies": {
     "area-data": "^1.0.0",
-    "iview": "^3.0.0",
-    "vue": "^2.5.17"
+    "iview": "^3.2.2",
+    "vue": "^2.6.7"
   },
   "keywords": [
     "vue",
@@ -31,9 +31,9 @@
     "area"
   ],
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
